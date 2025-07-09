@@ -1,7 +1,8 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { WeatherService } from '../../services/weather.service';
+import { WeatherStateService } from '../../services/weather-state.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,27 +15,20 @@ export class DashboardComponent {
   city: string = '';
   error: string = '';
 
-  @Output() weatherVal = new EventEmitter<any>();
+  constructor(private weatherSrv: WeatherService, private weatherStateSrv : WeatherStateService) {}
 
-  constructor(private weatherSrv: WeatherService) {}
+  fetchWeather() {
+    const city = this.city.trim();
+    if (!city) return;
 
-  searchCity() {
-    this.error = '';
-    const cityName = this.city.trim();
-    if (!cityName) {
-      this.error = 'Please enter a city name';
-      return;
-    }
-
-    this.weatherSrv.fetchWeather(cityName).subscribe({
+    this.weatherSrv.getWeather(city).subscribe({
       next: (data) => {
-        this.weatherVal.emit(data);
+        this.weatherStateSrv.setWeather(data);  
         this.city = '';
         this.error = '';
       },
-      error: (err) => {
-        this.error = 'City not found... !';
-        console.error(err);
+      error: () => {
+        this.error = 'City not found or API error';
       }
     });
   }

@@ -1,4 +1,6 @@
 <div class="app-container">
-  <app-dashboard (weatherVal)="showWeatherData($event)"></app-dashboard>
-  <app-weather-details [weather]="weatherData" *ngIf="weatherData"></app-weather-details>
+  <app-dashboard></app-dashboard>
+  <app-weather-details></app-weather-details>
+  <app-weather-outfit-suggestion></app-weather-outfit-suggestion>
+  <app-weather-search-history></app-weather-search-history>
 </div>

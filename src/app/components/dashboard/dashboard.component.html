@@ -1,5 +1,5 @@
 <div class="search-container">
-  <input type="text" placeholder="Enter city name" [(ngModel)]="city" (keyup.enter)="searchCity()"/>
-  <button (click)="searchCity()">Search</button>
+  <input type="text" placeholder="Enter city name" [(ngModel)]="city" (keyup.enter)="fetchWeather()"/>
+  <button (click)="fetchWeather()">Search</button>
 </div>
 <div class="error" *ngIf="error">{{ error }}</div>

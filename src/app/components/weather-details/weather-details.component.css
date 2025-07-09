@@ -1,0 +1,28 @@
+.weather-card {
+  background: #e3f2fd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.weather-card h2 {
+  margin-bottom: 15px;
+}
+
+.weather-card .main {
+  display: flex;
+  align-items: center;
+}
+
+.weather-card .temp h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.weather-card .details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
