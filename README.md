@@ -8,18 +8,18 @@ A modular Angular application that helps users get current weather information a
 Features
 -----------------
 
-> Search for weather by city name
-> View detailed weather information like 
+- Search for weather by city name
+- View detailed weather information like 
   * Temperature
   * Feels like
   * Min/Max
   * Humidity
   * Wind speed
-> Outfit recommendation based on temperature & weather conditions
-> Search history (last 5 unique cities)
-> Responsive design
-> Shared state management using RxJS BehaviorSubject
-> Graceful error handling for invalid city names or network failures
+- Outfit recommendation based on temperature & weather conditions
+- Search history (last 5 unique cities)
+- Responsive design
+- Shared state management using RxJS BehaviorSubject
+- Graceful error handling for invalid city names or network failures
 
 ---
 
